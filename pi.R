@@ -13,4 +13,19 @@ x     <- runif(Nreps, -1, 1)
 y     <- runif(Nreps, -1, 1)
 z     <- runif(Nreps, -1, 1)
 mean(x^2 + y^2 + z^2 < 1) * 6
-  
+
+# Humm, would this also estimate pi?
+vec <- rep(NA, Nreps)
+for (i in 1:Nreps)
+{
+  tmp <- 0
+  ind <- 0
+  while (tmp <= 1) 
+  {
+    tmp <- tmp + runif(1, 0, 1)
+    ind <- ind + 1
+  }
+  vec[i] <- ind
+}
+mean(vec)
+ 
